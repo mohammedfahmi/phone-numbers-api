@@ -87,3 +87,15 @@ To run all tests, execute the following command from the repository root
 ```bash
 mvn
 ```
+ we have two types of Tests:
+ - unit-tests: 
+   - the files that end with Test.
+   - they are run by surefire maven plugin in the maven test phase.
+   - to skip them add `-DskipTests` after your mvn command.
+ - integration-tests:
+   - the files that end with IT.
+   - they are run by failsafe maven plugin in the maven verify life-cycle and integration-tests goal.
+   - to skip them add `-DskipITs` after your mvn command.
+   - the tests run across docker instance of this application.  
+
+ the test code coverage are run by `jacoco-maven-plugin` and you can find the test reports in `\target\site\jacoco-aggregate` folder after a successful build.
