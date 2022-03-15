@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: jumia-0001-001
+      author: mohammed fahmy
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - tableExists:
+                tableName: customer_data_cleansing
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: cleansing_pkey
+                  name: cleansing_id
+                  type: INTEGER
+              - column:
+                  constraints:
+                    nullable: false
+                    unique: true
+                  name: customer_id
+                  type: INTEGER
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: varchar(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: phone
+                  type: varchar(255)
+            tableName: customer_data_cleansing

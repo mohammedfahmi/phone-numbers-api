@@ -1,0 +1,134 @@
+{
+  "load_PhoneNumberConfiguration_from_properties_file_successfully": [
+    {
+      "phoneRegex": "\\(237\\)\\ ?[2368]\\d{7,8}$",
+      "countryName": "Cameroon",
+      "code": "237",
+      "phoneNumbersStatesConfigurations": []
+    },
+    {
+      "phoneRegex": "\\(251\\)\\ ?[1-59]\\d{8}$",
+      "countryName": "Ethiopia",
+      "code": "251",
+      "phoneNumbersStatesConfigurations": [
+        {
+          "stateRegex": "\\(251\\)\\ ?9{1}[1]{2}\\d{6}$",
+          "stateName": "Addis Ababa",
+          "stateCode": "911"
+        },
+        {
+          "stateRegex": "\\(251\\)\\ ?9{1}1{1}4{1}\\d{6}$",
+          "stateName": "Northern region",
+          "stateCode": "914"
+        },
+        {
+          "stateRegex": "\\(251\\)\\ ?9{1}1{1}5{1}\\d{6}$",
+          "stateName": "East region",
+          "stateCode": "915"
+        },
+        {
+          "stateRegex": "\\(251\\)\\ ?9{1}1{1}6{1}\\d{6}$",
+          "stateName": "Southern region",
+          "stateCode": "916"
+        },
+        {
+          "stateRegex": "\\(251\\)\\ ?9{1}1{1}7{1}\\d{6}$",
+          "stateName": "Western region",
+          "stateCode": "917"
+        },
+        {
+          "stateRegex": "\\(251\\)\\ ?9{1}1{1}8{1}\\d{6}$",
+          "stateName": "Northwestern region",
+          "stateCode": "918"
+        }
+      ]
+    },
+    {
+      "phoneRegex": "\\(212\\)\\ ?[5-9]\\d{8}$",
+      "countryName": "Morocco",
+      "code": "212",
+      "phoneNumbersStatesConfigurations": []
+    },
+    {
+      "phoneRegex": "\\(258\\)\\ ?[28]\\d{7,8}$",
+      "countryName": "Mozambique",
+      "code": "258",
+      "phoneNumbersStatesConfigurations": []
+    },
+    {
+      "phoneRegex": "\\(256\\)\\ ?\\d{9}$",
+      "countryName": "Uganda",
+      "code": "256",
+      "phoneNumbersStatesConfigurations": []
+    }
+  ],
+  "load_filterModels_successfully": [
+    {
+      "countryName": "Cameroon",
+      "code": "237",
+      "states": []
+    },
+    {
+      "countryName": "Ethiopia",
+      "code": "251",
+      "states": [
+        {
+          "stateName": "Addis Ababa",
+          "stateCode": "911"
+        },
+        {
+          "stateName": "Northern region",
+          "stateCode": "914"
+        },
+        {
+          "stateName": "East region",
+          "stateCode": "915"
+        },
+        {
+          "stateName": "Southern region",
+          "stateCode": "916"
+        },
+        {
+          "stateName": "Western region",
+          "stateCode": "917"
+        },
+        {
+          "stateName": "Northwestern region",
+          "stateCode": "918"
+        }
+      ]
+    },
+    {
+      "countryName": "Morocco",
+      "code": "212",
+      "states": []
+    },
+    {
+      "countryName": "Mozambique",
+      "code": "258",
+      "states": []
+    },
+    {
+      "countryName": "Uganda",
+      "code": "256",
+      "states": []
+    }
+  ],
+  "load_phoneNumberModel_from_phoneNumber_successfully": {
+    "valid_Ethiopia_Addis_Ababa_phone_number": "(251) 911203317",
+    "valid_Ethiopia_Addis_Ababa_phone_number_model": {
+      "country": "Ethiopia",
+      "countryCode": "251",
+      "phone": "911203317",
+      "state": "Addis Ababa"
+    }
+  },
+  "load_phoneNumberModel_from_phoneNumber_with_no_state_successfully": {
+    "valid_Ethiopia_phone_number_model": {
+      "country": "Ethiopia",
+      "countryCode": "251",
+      "phone": "988203317",
+      "state": ""
+    }
+  }
+}

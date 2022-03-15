@@ -1,0 +1,260 @@
+openapi: "3.0.2"
+info:
+  title: phone-numbers-api
+  version: 1.0.0
+  description: ' a private microservice that serves as customer phone numbers'
+servers:
+  -
+    url: 'http://localhost:8080/phone-numbers-api'
+paths:
+  /api/v1/rest/phoneNumbersFilters:
+    get:
+      tags:
+        - CustomerPhonesNumbers
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PhoneNumbersFiltersModel'
+              examples:
+                An example Response to phoneNumbersFilters endpoint.:
+                  description: An example Response to phoneNumbersFilters endpoint.
+                  value:
+                    -
+                      countryName: Ethiopia
+                      code: '251'
+                      states:
+                        -
+                          stateName: Addis Ababa
+                          stateCode: '911'
+                        -
+                          stateName: Northern region
+                          stateCode: '914'
+                        -
+                          stateName: East region
+                          stateCode: '915'
+                        -
+                          stateName: Southern region
+                          stateCode: '916'
+                        -
+                          stateName: Western region
+                          stateCode: '917'
+                        -
+                          stateName: Northwestern region
+                          stateCode: '918'
+                    -
+                      countryName: Cameroon
+                      code: '237'
+                      states: []
+          description: successfully retrieved a list of PhoneNumbers Filters
+        '401':
+          content:
+            application/json:
+              examples:
+                An example Response to an un-Authorized request.:
+                  description: An example Response to an un-Authorized request.
+                  value:
+                    timestamp: '2022-02-28T03:45:26.377Z'
+                    status: 401
+                    error: Unauthorized
+                    path: /phone-numbers-api/api/v1/rest/phoneNumbersFilters
+          description: unAuthorized
+        '500':
+          content:
+            application/json:
+              examples:
+                An example Response to an Internal Server Error.:
+                  description: An example Response to an Internal Server Error.
+                  value:
+                    error: something went wrong.
+          description: Internal Server Error
+      operationId: getPhoneNumbersFilters
+      summary: load a list of all valid filters
+  /api/v1/rest/customerPhonesNumbers:
+    description: endpoint to load a list of filtered customer phone numbers
+    get:
+      tags:
+        - CustomerPhonesNumbers
+      parameters:
+        -
+          name: CustomersPhoneNumbersFilterCriteria
+          description: 'the selected phone filters criteria'
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/CustomersPhoneNumbersFilterCriteria'
+          allowReserved: true
+          example:
+            page: 0
+            size: 10
+            phoneNumbersFilterCriteria:
+              -
+                countryName: Morocco
+                countryCode: '212'
+                stateName: ''
+                stateCode: ''
+              -
+                countryName: Ethiopia
+                countryCode: '251'
+                stateName: Southern region
+                stateCode: '916'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PhoneNumbersResponseModel'
+              examples:
+                An example Response to customerPhonesNumbers endpoint:
+                  description: An example Response to customerPhonesNumbers endpoint.
+                  value:
+                    phoneNumbers:
+                      -
+                        country: Ethiopia
+                        countryCode: '251'
+                        phone: '911203317'
+                        state: Addis Ababa
+                      -
+                        country: Uganda
+                        countryCode: '256'
+                        phone: '714660221'
+                        state: ''
+                    paginationLinks:
+                      firstPage: 0
+                      currentPage: 0
+                      lsatPage: 4
+                      size: 10
+          description: successfully retrieved a list of filtered customer phone numbers
+        '400':
+          content:
+            application/json:
+              examples:
+                An example Response to a bad page and bad size values.:
+                  description: An example Response to a bad page and bad size values.
+                  value:
+                    error: >-
+                      Validation failed, failed to bind value four to field page, failed
+                      to bind value ten to field size.
+          description: 'bad request, not valid parameter'
+        '401':
+          content:
+            application/json:
+              examples:
+                An example Response to an un-Authorized request.:
+                  description: An example Response to an un-Authorized request.
+                  value:
+                    timestamp: '2022-02-28T03:45:26.377Z'
+                    status: 401
+                    error: Unauthorized
+                    path: /phone-numbers-api/api/v1/rest/customerPhonesNumbers
+          description: unAuthorized
+        '500':
+          content:
+            application/json:
+              examples:
+                An example Response to an Internal Server Error.:
+                  description: An example Response to an Internal Server Error.
+                  value:
+                    error: something went wrong.
+          description: Internal Server Error
+      operationId: getCustomerPhonesNumbers
+    summary: load a list of all filtered customer phone numbers
+components:
+  schemas:
+    PhoneNumbersFiltersModel:
+      type: object
+      properties:
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/PhoneNumberFilterModel'
+    PhoneNumberFilterModel:
+      type: object
+      properties:
+        countryName:
+          type: string
+        code:
+          type: string
+        states:
+          type: array
+          items:
+            $ref: '#/components/schemas/StateModel'
+    StateModel:
+      type: object
+      properties:
+        stateName:
+          type: string
+        stateCode:
+          type: string
+    PhoneNumbersResponseModel:
+      type: object
+      properties:
+        phoneNumbers:
+          type: array
+          items:
+            $ref: '#/components/schemas/PhoneNumberModel'
+        paginationLinks:
+          $ref: '#/components/schemas/PaginationLinkModel'
+    PhoneNumberModel:
+      type: object
+      properties:
+        country:
+          type: string
+        countryCode:
+          type: string
+        phone:
+          type: string
+        state:
+          type: string
+    PaginationLinkModel:
+      type: object
+      properties:
+        firstPage:
+          type: integer
+        currentPage:
+          type: integer
+        lastPage:
+          type: integer
+        totalPages:
+          type: integer
+        totalElements:
+          type: integer
+        size:
+          type: integer
+    CustomersPhoneNumbersFilterCriteria:
+      type: object
+      x-validations: "@IsValidFilterCriteria"
+      properties:
+        page:
+          type: integer
+          format: int32
+          default: 0
+        size:
+          type: integer
+          format: int32
+          default: 10
+        phoneNumbersFilterCriteria:
+          type: array
+          default: []
+          items:
+            $ref: '#/components/schemas/PhoneNumbersFilterCriteria'
+    PhoneNumbersFilterCriteria:
+      type: object
+      properties:
+        countryName:
+          type: string
+        countryCode:
+          type: string
+        stateName:
+          type: string
+        stateCode:
+          type: string
+  securitySchemes:
+    basicAuth:
+      scheme: basic
+      type: http
+      description: basic Authentication for all endpoints
+security:
+  -
+    basicAuth: []

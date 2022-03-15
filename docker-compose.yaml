@@ -1,0 +1,30 @@
+version: "2.1"
+services:
+  phonebook-ui:
+    image: mohammedfahmi/phonebook-ui
+    ports:
+      - 80:3000
+    container_name: phonebook-ui
+    stdin_open: true
+    tty: true
+    networks:
+      - phonenumbers
+  phone-numbers-api:
+    image:  mohammedfahmi/phone-numbers-api-api
+    build: .
+    privileged: true
+    environment:
+      JAVA_OPTS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005'
+      JUMIA_DATASOURCE_URL: 'jdbc:sqlite:config/sample.db'
+    ports:
+      - '8080:8080'
+      - '5005:5005'
+    healthcheck:
+      test: ["CMD", "curl", "-s", "-f", "-i", "http://localhost:8080/phone-numbers-api/actuator/health"]
+      timeout: 20s
+      retries: 10
+    networks:
+      - phonenumbers
+networks:
+  phonenumbers:
+    name: custom_phonenumbers

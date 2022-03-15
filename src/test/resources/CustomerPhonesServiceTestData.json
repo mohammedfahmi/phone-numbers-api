@@ -1,0 +1,449 @@
+{
+  "getCustomersPhoneNumber_Page_0_size_10_successfully": {
+    "content": [
+      {
+        "id": 0,
+        "name": "Walid Hammadi",
+        "phone": "(212) 6007989253"
+      },
+      {
+        "id": 1,
+        "name": "Yosaf Karrouch",
+        "phone": "(212) 698054317"
+      },
+      {
+        "id": 2,
+        "name": "Younes Boutikyad",
+        "phone": "(212) 6546545369"
+      },
+      {
+        "id": 3,
+        "name": "Houda Houda",
+        "phone": "(212) 6617344445"
+      },
+      {
+        "id": 4,
+        "name": "Chouf Malo",
+        "phone": "(212) 691933626"
+      },
+      {
+        "id": 5,
+        "name": "soufiane fritisse ",
+        "phone": "(212) 633963130"
+      },
+      {
+        "id": 6,
+        "name": "Nada Sofie",
+        "phone": "(212) 654642448"
+      },
+      {
+        "id": 7,
+        "name": "Edunildo Gomes Alberto ",
+        "phone": "(258) 847651504"
+      },
+      {
+        "id": 8,
+        "name": "Walla's Singz Junior",
+        "phone": "(258) 846565883"
+      },
+      {
+        "id": 9,
+        "name": "sevilton sylvestre",
+        "phone": "(258) 849181828"
+      }
+    ],
+    "pageable": {
+      "sort": {
+        "empty": false,
+        "sorted": true,
+        "unsorted": false
+      },
+      "offset": 0,
+      "pageNumber": 0,
+      "pageSize": 10,
+      "paged": true,
+      "unpaged": false
+    },
+    "last": false,
+    "totalPages": 5,
+    "totalElements": 41,
+    "size": 10,
+    "number": 0,
+    "sort": {
+      "empty": false,
+      "sorted": true,
+      "unsorted": false
+    },
+    "numberOfElements": 10,
+    "first": true,
+    "empty": false
+  },
+  "getCustomersPhoneNumber_page_9_size_10_unsuccessfully": {
+    "content": [
+    ],
+    "pageable": {
+      "sort": {
+        "empty": false,
+        "sorted": true,
+        "unsorted": false
+      },
+      "offset": 0,
+      "pageNumber": 0,
+      "pageSize": 10,
+      "paged": true,
+      "unpaged": false
+    },
+    "last": false,
+    "totalPages": 5,
+    "totalElements": 41,
+    "size": 10,
+    "number": 0,
+    "sort": {
+      "empty": false,
+      "sorted": true,
+      "unsorted": false
+    },
+    "numberOfElements": 10,
+    "first": true,
+    "empty": false
+  },
+  "testWasRedundantFiltersRemoved_whenAllCountriesHasAtLeastSingleMatchingAllStatesFilter": {
+    "inputPhoneNumbersFilterCriteria": [
+      {
+        "countryName": "Cameroon",
+        "countryCode": "237",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Mozambique",
+        "countryCode": "258",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Morocco",
+        "countryCode": "212",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Uganda",
+        "countryCode": "256",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Addis Ababa",
+        "stateCode": "911"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Southern region",
+        "stateCode": "916"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Northern region",
+        "stateCode": "914"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "East region",
+        "stateCode": "915"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Western region",
+        "stateCode": "917"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Northwestern region",
+        "stateCode": "918"
+      }
+    ],
+    "expectedOutputPhoneNumbersFilterCriteria": [
+      {
+        "countryName": "Cameroon",
+        "countryCode": "237",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Mozambique",
+        "countryCode": "258",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Morocco",
+        "countryCode": "212",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Uganda",
+        "countryCode": "256",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "",
+        "stateCode": ""
+      }
+    ]
+  },
+  "testWasRedundantFiltersRemoved_whenOneCountryAtLeastHasNoMatchingAllStatesFilter": {
+    "inputPhoneNumbersFilterCriteria": [
+      {
+        "countryName": "Cameroon",
+        "countryCode": "237",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Mozambique",
+        "countryCode": "258",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Morocco",
+        "countryCode": "212",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Uganda",
+        "countryCode": "256",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Addis Ababa",
+        "stateCode": "911"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Southern region",
+        "stateCode": "916"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Northern region",
+        "stateCode": "914"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "East region",
+        "stateCode": "915"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Western region",
+        "stateCode": "917"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Northwestern region",
+        "stateCode": "918"
+      }
+    ],
+    "expectedOutputPhoneNumbersFilterCriteria": [
+      {
+        "countryName": "Cameroon",
+        "countryCode": "237",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Mozambique",
+        "countryCode": "258",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Morocco",
+        "countryCode": "212",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Uganda",
+        "countryCode": "256",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Addis Ababa",
+        "stateCode": "911"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Southern region",
+        "stateCode": "916"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Northern region",
+        "stateCode": "914"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "East region",
+        "stateCode": "915"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Western region",
+        "stateCode": "917"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Northwestern region",
+        "stateCode": "918"
+      }
+    ]
+  },
+  "getCustomersPhoneNumber_filters_specifications_successfully": {
+    "inputPhoneNumbersFilterCriteria": [
+      {
+        "countryName": "Cameroon",
+        "countryCode": "237",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Mozambique",
+        "countryCode": "258",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Morocco",
+        "countryCode": "212",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Uganda",
+        "countryCode": "256",
+        "stateName": "",
+        "stateCode": ""
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Addis Ababa",
+        "stateCode": "911"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Southern region",
+        "stateCode": "916"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Northern region",
+        "stateCode": "914"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "East region",
+        "stateCode": "915"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Western region",
+        "stateCode": "917"
+      },
+      {
+        "countryName": "Ethiopia",
+        "countryCode": "251",
+        "stateName": "Northwestern region",
+        "stateCode": "918"
+      }
+    ],
+    "expectedPhoneNumberResponseModel": {
+      "phoneNumbers" : [ {
+        "country" : "Morocco",
+        "countryCode" : "212",
+        "phone" : "698054317",
+        "state" : ""
+      }, {
+        "country" : "Morocco",
+        "countryCode" : "212",
+        "phone" : "691933626",
+        "state" : ""
+      }, {
+        "country" : "Morocco",
+        "countryCode" : "212",
+        "phone" : "633963130",
+        "state" : ""
+      }, {
+        "country" : "Morocco",
+        "countryCode" : "212",
+        "phone" : "654642448",
+        "state" : ""
+      }, {
+        "country" : "Mozambique",
+        "countryCode" : "258",
+        "phone" : "847651504",
+        "state" : ""
+      }, {
+        "country" : "Mozambique",
+        "countryCode" : "258",
+        "phone" : "846565883",
+        "state" : ""
+      }, {
+        "country" : "Mozambique",
+        "countryCode" : "258",
+        "phone" : "849181828",
+        "state" : ""
+      } ],
+      "paginationLinks" : {
+        "firstPage" : 0,
+        "currentPage" : 0,
+        "lastPage" : 4,
+        "totalPages": 5,
+        "totalElements": 41,
+        "size" : 10
+      }
+    }
+  }
+}
+

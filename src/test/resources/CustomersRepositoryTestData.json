@@ -1,0 +1,157 @@
+{
+  "getCustomersPhoneNumber_Page_0_size_10_successfully": {
+    "content": [
+      {
+        "id": 1,
+        "name": "Yosaf Karrouch",
+        "phone": "(212) 698054317"
+      },
+      {
+        "id": 4,
+        "name": "Chouf Malo",
+        "phone": "(212) 691933626"
+      },
+      {
+        "id": 5,
+        "name": "soufiane fritisse ",
+        "phone": "(212) 633963130"
+      },
+      {
+        "id": 6,
+        "name": "Nada Sofie",
+        "phone": "(212) 654642448"
+      },
+      {
+        "id": 7,
+        "name": "Edunildo Gomes Alberto ",
+        "phone": "(258) 847651504"
+      },
+      {
+        "id": 8,
+        "name": "Walla's Singz Junior",
+        "phone": "(258) 846565883"
+      },
+      {
+        "id": 9,
+        "name": "sevilton sylvestre",
+        "phone": "(258) 849181828"
+      },
+      {
+        "id": 11,
+        "name": "Florencio Samuel",
+        "phone": "(258) 847602609"
+      },
+      {
+        "id": 13,
+        "name": "Pedro B 173",
+        "phone": "(258) 823747618"
+      },
+      {
+        "id": 14,
+        "name": "Ezequiel Fenias",
+        "phone": "(258) 848826725"
+      }
+    ],
+    "pageable": {
+      "sort": {
+        "empty": false,
+        "sorted": true,
+        "unsorted": false
+      },
+      "offset": 0,
+      "pageNumber": 0,
+      "pageSize": 10,
+      "paged": true,
+      "unpaged": false
+    },
+    "last": false,
+    "totalPages": 5,
+    "totalElements": 41,
+    "size": 10,
+    "number": 0,
+    "sort": {
+      "empty": false,
+      "sorted": true,
+      "unsorted": false
+    },
+    "numberOfElements": 10,
+    "first": true,
+    "empty": false
+  },
+  "getCustomersPhoneNumber_Page_0_size_10_with_specifications_successfully": {
+    "specificationLikeClause": [
+      "(237) ",
+      "(237)",
+      "(258) ",
+      "(258)",
+      "(212) ",
+      "(212)",
+      "(256) ",
+      "(256)",
+      "(251) 911",
+      "(251)911",
+      "(251) 916",
+      "(251)916",
+      "(251) 914",
+      "(251)914",
+      "(251) 915",
+      "(251)915",
+      "(251) 917",
+      "(251)917",
+      "(251) 918",
+      "(251)918"
+    ],
+    "expectedResponse": [
+      {
+        "id": 1,
+        "name": "Yosaf Karrouch",
+        "phone": "(212) 698054317"
+      },
+      {
+        "id": 4,
+        "name": "Chouf Malo",
+        "phone": "(212) 691933626"
+      },
+      {
+        "id": 5,
+        "name": "soufiane fritisse ",
+        "phone": "(212) 633963130"
+      },
+      {
+        "id": 6,
+        "name": "Nada Sofie",
+        "phone": "(212) 654642448"
+      },
+      {
+        "id": 7,
+        "name": "Edunildo Gomes Alberto ",
+        "phone": "(258) 847651504"
+      },
+      {
+        "id": 8,
+        "name": "Walla's Singz Junior",
+        "phone": "(258) 846565883"
+      },
+      {
+        "id": 9,
+        "name": "sevilton sylvestre",
+        "phone": "(258) 849181828"
+      },
+      {
+        "id": 11,
+        "name": "Florencio Samuel",
+        "phone": "(258) 847602609"
+      },
+      {
+        "id": 13,
+        "name": "Pedro B 173",
+        "phone": "(258) 823747618"
+      },
+      {
+        "id": 14,
+        "name": "Ezequiel Fenias",
+        "phone": "(258) 848826725"
+      }
+    ]
+  }
+}

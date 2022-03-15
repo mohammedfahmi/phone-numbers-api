@@ -1,0 +1,63 @@
+server:
+  servlet:
+    context-path: /phone-numbers-api
+  tomcat:
+    relaxed-query-chars: "[,],{,}"
+logging:
+  level:
+    root: info
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: "health"
+  endpoint:
+    health:
+      enabled: true
+  server:
+    base-path: /actuator
+auth:
+  name: admin
+  password: admin
+  role: API_USER
+jumia:
+  datasource:
+    url: jdbc:sqlite::resource:sample.db
+spring:
+  datasource:
+    url: ${jumia.datasource.url}
+    driver-class-name: org.sqlite.JDBC
+    hikari:
+      minimumIdle: 10
+      maximumPoolSize: 20
+      idleTimeout: 30000
+      poolName: SpringBootJPAHikariCP
+      maxLifetime: 1800000
+      connectionTimeout: 90000
+      connection-test-query: SELECT 1;
+  jpa:
+    open-in-view: true
+    database-platform: com.jumia.phonenumbersapi.configuration.database.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+  liquibase:
+    databaseChangeLogTable: PHONENUBERS_DATABASECHANGELOG
+    databaseChangeLogLockTable: PHONENUBERS_DATABASECHANGELOGLOCK
+endpoint:
+  security:
+    user:
+      name: ${auth.name}
+      password: ${auth.password}
+      role: ${auth.role}
+      management-context: ${management.server.base-path}
+    white-list-origins:
+      origins:
+        -
+          "http://localhost"
+        -
+          "http://localhost:80"
+        -
+          "http://localhost:3000"
+        -
+          "http://localhost:3001"

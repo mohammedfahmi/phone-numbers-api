@@ -1,0 +1,119 @@
+{
+  "getCustomerPhonesNumbers_successfully": {
+    "expectedPhoneNumberResponseModel": {
+      "phoneNumbers" : [ {
+        "country" : "Morocco",
+        "countryCode" : "212",
+        "phone" : "698054317",
+        "state" : ""
+      }, {
+        "country" : "Morocco",
+        "countryCode" : "212",
+        "phone" : "691933626",
+        "state" : ""
+      }, {
+        "country" : "Morocco",
+        "countryCode" : "212",
+        "phone" : "633963130",
+        "state" : ""
+      }, {
+        "country" : "Morocco",
+        "countryCode" : "212",
+        "phone" : "654642448",
+        "state" : ""
+      }, {
+        "country" : "Mozambique",
+        "countryCode" : "258",
+        "phone" : "847651504",
+        "state" : ""
+      }, {
+        "country" : "Mozambique",
+        "countryCode" : "258",
+        "phone" : "846565883",
+        "state" : ""
+      }, {
+        "country" : "Mozambique",
+        "countryCode" : "258",
+        "phone" : "849181828",
+        "state" : ""
+      } ],
+      "paginationLinks" : {
+        "firstPage" : 0,
+        "currentPage" : 0,
+        "lastPage" : 4,
+        "totalPages": 5,
+        "totalElements": 41,
+        "size" : 10
+      }
+    },
+    "InputPhoneNumbersFilterCriteriaParams": [
+      "page", "0",
+      "size", "10",
+      "phoneNumbersFilterCriteria", "[{\"countryName\": \"Cameroon\",\"countryCode\": \"237\",\"stateName\": \"\",\"stateCode\": \"\"}, {\"countryName\": \"Mozambique\",\"countryCode\": \"258\",\"stateName\": \"\",\"stateCode\": \"\"}, {\"countryName\": \"Morocco\",\"countryCode\": \"212\",\"stateName\": \"\",\"stateCode\": \"\"}, {\"countryName\": \"Uganda\",\"countryCode\": \"256\",\"stateName\": \"\",\"stateCode\": \"\"}, {\"countryName\": \"Ethiopia\",\"countryCode\": \"251\",\"stateName\": \"Addis Ababa\",\"stateCode\": \"911\"}, {\"countryName\": \"Ethiopia\",\"countryCode\": \"251\",\"stateName\": \"Northern region\",\"stateCode\": \"914\"}, {\"countryName\": \"Ethiopia\",\"countryCode\": \"251\",\"stateName\": \"East region\",\"stateCode\": \"915\"}, {\"countryName\": \"Ethiopia\",\"countryCode\": \"251\",\"stateName\": \"Southern region\",\"stateCode\": \"916\"}, {\"countryName\": \"Ethiopia\",\"countryCode\": \"251\",\"stateName\": \"Western region\",\"stateCode\": \"917\"}, {\"countryName\": \"Ethiopia\",\"countryCode\": \"251\",\"stateName\": \"Northwestern region\",\"stateCode\": \"918\"}]"
+      ]
+
+  },
+  "getCustomerPhonesNumbers_unsuccessful_CustomersPhoneNumbersFilterCriteria_BadRequest": {
+    "inputPhoneNumbersFilterCriteriaParams": [
+      "page", "9",
+      "size", "10",
+      "phoneNumbersFilterCriteria", "[{\"countryName\": \"not a country\",\"countryCode\": \"bad code\",\"stateName\": \"not a state\",\"stateCode\": \"bad code\"}]"
+    ]
+  },
+  "getPhoneNumbersFilters_successfully": {
+    "expectedFilters": {
+      "filters": [
+        {
+          "countryName": "Cameroon",
+          "code": "237",
+          "states": []
+        },
+        {
+          "countryName": "Ethiopia",
+          "code": "251",
+          "states": [
+            {
+              "stateName": "Addis Ababa",
+              "stateCode": "911"
+            },
+            {
+              "stateName": "Northern region",
+              "stateCode": "914"
+            },
+            {
+              "stateName": "East region",
+              "stateCode": "915"
+            },
+            {
+              "stateName": "Southern region",
+              "stateCode": "916"
+            },
+            {
+              "stateName": "Western region",
+              "stateCode": "917"
+            },
+            {
+              "stateName": "Northwestern region",
+              "stateCode": "918"
+            }
+          ]
+        },
+        {
+          "countryName": "Morocco",
+          "code": "212",
+          "states": []
+        },
+        {
+          "countryName": "Mozambique",
+          "code": "258",
+          "states": []
+        },
+        {
+          "countryName": "Uganda",
+          "code": "256",
+          "states": []
+        }
+      ]
+    }
+  }
+}
