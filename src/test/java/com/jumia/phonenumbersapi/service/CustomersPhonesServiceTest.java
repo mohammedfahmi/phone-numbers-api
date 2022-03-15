@@ -1,6 +1,8 @@
 package com.jumia.phonenumbersapi.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.jumia.phonenumbersapi.configuration.phoneNumber.PhoneNumberConfiguration;
+import com.jumia.phonenumbersapi.configuration.propertyFactory.YamlPropertySourceFactory;
 import com.jumia.phonenumbersapi.entities.Customer;
 import com.jumia.phonenumbersapi.model.CustomersPhoneNumbersFilterCriteria;
 import com.jumia.phonenumbersapi.model.PhoneNumbersFilterCriteria;
@@ -9,11 +11,15 @@ import com.jumia.phonenumbersapi.repositories.CustomersRepository;
 import com.jumia.phonenumbersapi.utils.JsonTestUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.domain.*;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.validation.ValidationException;
 import java.io.IOException;
@@ -27,8 +33,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
 @SuppressWarnings({"unchecked", "rawtypes"})
-@SpringBootTest
+@ExtendWith(SpringExtension.class)
+@EnableConfigurationProperties
+@PropertySource(value = "classpath:phoneNumberConfiguration.yaml", factory = YamlPropertySourceFactory.class)
+@SpringBootTest(classes = { CustomersRepository.class, CustomersPhonesService.class, PhoneNumberConfiguration.class})
 class CustomersPhonesServiceTest {
+
     @MockBean
     private CustomersRepository customersRepository;
     @Autowired
@@ -77,12 +87,13 @@ class CustomersPhonesServiceTest {
                     new TypeReference<PhoneNumbersResponseModel>(){});
             PageImpl expectedCustomerPhonePage =   new PageImpl( (List<Customer>) JsonTestUtil.readJsonNodePropertyValue(
                     "CustomerPhonesServiceTestData.json",
-                    "getCustomersPhoneNumber_Page_0_size_10_successfully", "content",
+                    "getCustomersPhoneNumber_filters_specifications_successfully",
+                    "expectedCustomerPhonePage",
                     new TypeReference<List<Customer>>(){}),
                     PageRequest.of(0, 10, Sort.by("id")) , 41);
             List<PhoneNumbersFilterCriteria> inputFilters = (List<PhoneNumbersFilterCriteria>) JsonTestUtil.readJsonNodePropertyValue(
                     "CustomerPhonesServiceTestData.json",
-                    "testWasRedundantFiltersRemoved_whenOneCountryAtLeastHasNoMatchingAllStatesFilter",
+                    "getCustomersPhoneNumber_filters_specifications_successfully",
                     "inputPhoneNumbersFilterCriteria",
                     new TypeReference<List<PhoneNumbersFilterCriteria>>(){});
             when(customersRepository

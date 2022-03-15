@@ -398,6 +398,58 @@
         "stateCode": "918"
       }
     ],
+    "expectedCustomerPhonePage": [
+      {
+        "id": 0,
+        "name": "Walid Hammadi",
+        "phone": "(212) 6007989253"
+      },
+      {
+        "id": 1,
+        "name": "Yosaf Karrouch",
+        "phone": "(212) 698054317"
+      },
+      {
+        "id": 2,
+        "name": "Younes Boutikyad",
+        "phone": "(212) 6546545369"
+      },
+      {
+        "id": 3,
+        "name": "Houda Houda",
+        "phone": "(212) 6617344445"
+      },
+      {
+        "id": 4,
+        "name": "Chouf Malo",
+        "phone": "(212) 691933626"
+      },
+      {
+        "id": 5,
+        "name": "soufiane fritisse ",
+        "phone": "(212) 633963130"
+      },
+      {
+        "id": 6,
+        "name": "Nada Sofie",
+        "phone": "(212) 654642448"
+      },
+      {
+        "id": 7,
+        "name": "Edunildo Gomes Alberto ",
+        "phone": "(258) 847651504"
+      },
+      {
+        "id": 8,
+        "name": "Walla's Singz Junior",
+        "phone": "(258) 846565883"
+      },
+      {
+        "id": 9,
+        "name": "sevilton sylvestre",
+        "phone": "(258) 849181828"
+      }
+    ],
     "expectedPhoneNumberResponseModel": {
       "phoneNumbers" : [ {
         "country" : "Morocco",

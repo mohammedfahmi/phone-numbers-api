@@ -98,4 +98,4 @@ mvn
    - to skip them add `-DskipITs` after your mvn command.
    - the tests run across docker instance of this application.  
 
- the test code coverage are run by `jacoco-maven-plugin` and you can find the test reports in `\target\site\jacoco-aggregate` folder after a successful build.
+ the test code coverage are run by `jacoco-maven-plugin` and you can find the test reports in `\target\site\jacoco-aggregate` folder after a successful build, your code coverage must pass coverage ratio of 90% for a successful build.

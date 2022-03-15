@@ -84,7 +84,7 @@ class PhoneNumberConfigurationTest {
     @Test
     public void fail_to_map_phoneNumberModel_from_phoneNumber() {
         String invalid_Ethiopia_phone_number= "(251) 78820331788";
-        assertTrue(!phoneNumberConfiguration.toPhoneModel(invalid_Ethiopia_phone_number).isPresent());
+        assertFalse(phoneNumberConfiguration.toPhoneModel(invalid_Ethiopia_phone_number).isPresent());
     }
     @Test
     public void  isFilterCriteriaValid_should_pass() {
@@ -104,7 +104,7 @@ class PhoneNumberConfigurationTest {
                         .countryCode("212")
                         .stateName("wrong input")
                         .stateCode("").build();
-        assertTrue(!phoneNumberConfiguration.isFilterCriteriaValid(input));
+        assertFalse(phoneNumberConfiguration.isFilterCriteriaValid(input));
     }
 
     @Test
@@ -125,6 +125,6 @@ class PhoneNumberConfigurationTest {
                         .countryCode("251")
                         .stateName("wrong input")
                         .stateCode("wrongCode").build();
-        assertTrue(!phoneNumberConfiguration.isFilterCriteriaValid(input));
+        assertFalse(phoneNumberConfiguration.isFilterCriteriaValid(input));
     }
 }
